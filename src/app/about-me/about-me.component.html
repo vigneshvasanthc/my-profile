@@ -1,64 +1,222 @@
 <app-full-page-loader *ngIf="pageLoading"></app-full-page-loader>
 <div class="container-block" *ngIf="!pageLoading">
-  <section class="about-section">
 
+  <!-- HERO ABOUT SECTION -->
+  <section class="about-hero" #scrollSection>
+
+    <!-- LEFT CONTENT -->
     <div class="about-details">
-      <h1 class="title py-3">About Me</h1>
+      <span class="label">ABOUT ME</span>
+
+      <h1 class="name">Vignesh Vasanth C</h1>
+
+      <h2 class="role">
+        Software Engineer <span>| Senior Angular Developer</span>
+      </h2>
+
       <ul class="description">
-        <li>
-          Hello! My name is <b>Vignesh Vasanth C</b></li>
-          <li> As a software engineer with 8
-          years of experience in front-end development, I possess a strong skill
-          set in various tools and technologies such as Angular, HTML, CSS, Tailwind CSS, SCSS,
-          Bootstrap, JavaScript, and TypeScript.
-        </li>
-        <li>
-          With my knowledge of Angular, I can create complex web applications
-          that are highly interactive and responsive. Angular is a popular
-          front-end framework that uses a declarative approach to building user
-          interfaces, which makes it easier to write clean and maintainable code.
-        </li>
-        <li>
-          My proficiency in HTML and CSS allows me to design and style web
-          pages with ease, making them visually appealing and accessible.
-          Bootstrap, a popular CSS framework like SCSS, Less, Tailwind CSS, helps you to create responsive web
-          designs that are compatible with different screen sizes and devices.
-        </li>
-        <li>
-          My expertise in JavaScript and TypeScript enables you to write
-          powerful and efficient client-side scripts that can manipulate the
-          Document Object Model (DOM) and provide interactivity to web pages.
-          TypeScript, a superset of JavaScript, adds features such as static
-          typing and class-based object-oriented programming, making it easier to
-          write scalable and maintainable code.
-        </li>
-        <li>
-          Overall, your skills and experience as a front-end developer make you a
-          valuable asset to any software development team.
-        </li>
+        <li>8.5+ years of frontend development experience</li>
+        <li>Expert in Angular 14+, TypeScript & modern UI architecture</li>
+        <li>Worked on SCM & Product Compliance enterprise platforms</li>
+        <li>Focused on performance, scalability & clean UI</li>
+        <li>Strong in REST APIs & authentication flows</li>
       </ul>
+
+      <button
+  class="scroll-fab"
+  (click)="onScrollButtonClick()"
+  [class.rotate]="isAtBottom"
+>
+  <fa-icon [icon]="faDownArrow"></fa-icon>
+</button>
     </div>
-    <div class="about-profile" *ngFor="let imgItem of profilePic">
-      <div class="about-profile-pic">
-        <!-- <img class="my-profile" [src]="imgItem.src" alt=""> -->
+
+    <!-- RIGHT PROFILE -->
+    <div class="about-profile">
+      <div class="about-profile-pic"></div>
+    </div>
+
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section #target class="skills-section" #scrollSection>
+    <h2 class="title">Skills</h2>
+
+    <div class="skills-carousel">
+      <div class="skills-track">
+        <div
+        class="skill-card"
+        *ngFor="let skill of skillPic.concat(skillPic)"
+      >
+        <div class="skill-icon">
+          <img [src]="skill.src" alt="{{ skill.name }}" />
+        </div>
+        <p>{{ skill.name }}</p>
       </div>
-      <!-- <p>{{ imgItem.name }}</p> -->
-  </div>
-  </section>
-  <button class="smooth-scroll" (click)="scrollToElement(target)">
-    <fa-icon class="side-nav-link-icon" [icon]="faDownArrow"></fa-icon>
-  </button>
-
-  <section #target>
-    <div class="skills-block">
-      <h2 class="title py-8 pb-2">Skills</h2>
-      <ul class="skills">
-        <li class="skill-list" *ngFor="let skilItem of skillPic">
-          <img [src]="skilItem.src" alt="">
-          <h3 class="text-center font-bold py-8">{{skilItem.name}}</h3>
-        </li>
-      </ul>
+      </div>
     </div>
   </section>
-</div>
+  
 
+  <section class="experience-story-section" #scrollSection>
+    <h2 class="section-title">Product Contributions</h2>
+    <div class="story-card">
+      <!-- HEADER -->
+      <div class="story-header">
+        <div>
+          <h3 class="company">
+            Swin Technologies Private Limited (TrusTrace)
+          </h3>
+          <p class="role">
+            Software Engineer – Frontend / UI Engineer
+          </p>
+        </div>
+        <span class="duration">Sep 2019 – Present</span>
+      </div>
+
+      <!-- STORY BLOCKS -->
+      <div class="story-block">
+        <h4>Product Context</h4>
+        <p>
+          TrusTrace is an enterprise sustainability and supply-chain transparency
+          platform used by global brands to track product origin, compliance,
+          and supplier relationships across complex supply chains.
+        </p>
+      </div>
+
+      <div class="story-block">
+        <h4>Role & Ownership</h4>
+        <p>
+          I worked as a Frontend / UI Engineer, building and owning major product
+          modules using Angular. My primary focus was on developing scalable,
+          high-performance user interfaces for Supply Chain Management (SCM) and
+          Product Component Mapping (PCM) workflows.
+        </p>
+      </div>
+
+      <div class="story-block">
+        <h4>Tech & Architecture</h4>
+        <p>
+          I developed enterprise-grade web applications using Angular (14+),
+          TypeScript, JavaScript, HTML, SCSS, Tailwind CSS, and Bootstrap.
+          I closely collaborated with backend engineers to integrate REST APIs,
+          authentication mechanisms, and handle large, nested datasets efficiently.
+        </p>
+      </div>
+
+      <div class="story-block">
+        <h4>Engineering Focus</h4>
+        <ul class="arrow-list">
+          <li>
+            Owned UI development for <strong>SCM workflows</strong>, enabling suppliers
+            to submit compliance, material, and sustainability declarations.
+          </li>
+          <li>
+            Built <strong>PCM modules</strong> to visualize multi-tier supplier
+            relationships (Tier-1 to Tier-n) with clear and intuitive UI.
+          </li>
+          <li>
+            Designed responsive and accessible interfaces optimized for
+            performance, scalability, and cross-browser compatibility.
+          </li>
+          <li>
+            Participated in code reviews, feature planning, and UI/UX improvements
+            to continuously enhance product quality.
+          </li>
+        </ul>
+      </div>
+
+      <div class="story-block highlight">
+        <h4>Impact</h4>
+        <p>
+          My work helped deliver reliable, scalable, and user-friendly frontend
+          experiences for enterprise customers, improving data clarity,
+          usability, and overall platform efficiency.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="experience-alt" #scrollSection>
+
+  <!-- COMPANY TITLE -->
+  <div class="experience-alt-header">
+    <h3 class="company-alt">
+      UITOUX Solution Private Limited
+    </h3>
+    <span class="duration-alt">Sep 2017 – Sep 2019</span>
+  </div>
+
+  <!-- CONTENT GRID -->
+  <div class="experience-alt-content">
+
+    <!-- LEFT COLUMN -->
+    <div class="experience-alt-block">
+      <h4>Role</h4>
+      <p>Software Engineer – UI Developer</p>
+
+      <h4>Focus</h4>
+      <ul class="arrow-list">
+          <li>
+UI engineering and responsive web design for SaaS
+        and enterprise web applications.
+            </li>
+            <li>
+UI engineering, responsive web design, and optimizing frontend
+performance and cross-browser compatibility for web applications.
+            </li>
+        </ul>
+
+        <h4>Engineering Focus</h4>
+       <ul class="arrow-list">
+          <li>
+            Pixel-perfect UI implementation
+          </li>
+          <li>
+            Mobile-first responsive design
+          </li>
+          <li>
+            Cross-browser compatibility
+          </li>
+        </ul>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="experience-alt-block">
+      <h4>Core Work</h4>
+      <ul class="arrow-list">
+        <li>
+          Built responsive, user-friendly interfaces for
+          customer-facing SaaS applications.
+        </li>
+        <li>
+          Translated design mockups into clean, maintainable UI code.
+        </li>
+        <li>
+          Developed dynamic UI components using AngularJS.
+        </li>
+        <li>
+          Worked closely with designers to ensure visual consistency
+          across devices and browsers.
+        </li>
+      </ul>
+
+      <h4>Outcome</h4>
+      <p>
+        Developed a strong foundation in UI engineering,
+        responsive design, and frontend best practices.
+      </p>
+
+      <h4>Tech Stack</h4>
+      <p>
+        HTML5, CSS3, JavaScript,	Bootstrap, AngularJS
+      </p>
+
+    
+    </div>
+
+  </div>
+
+</section>
+</div>
