@@ -1,75 +1,73 @@
 <app-full-page-loader *ngIf="pageLoading"></app-full-page-loader>
 
 <div class="container-block" *ngIf="!pageLoading">
-  <h3 class="title pt-3">My Projects</h3>
 
-  <p>
-    Introduction A leading automobile manufacturer approached us with a request
-    to develop a software solution that would help them manage their business
-    operations more efficiently. The manufacturer needed an all-in-one platform
-    that could handle multiple functions, such as ERP, CRM, B2B, B2C e-commerce,
-    and admin panels for various solutions. As a front-end full-stack developer,
-    I was assigned to lead the project.
-  </p>
-  <p>
-    Problem Statement The automobile industry is highly competitive, and
-    manufacturers need to stay ahead of the curve to succeed. Our client was
-    facing challenges in managing their business operations and maintaining
-    customer relationships. Their existing software solutions were outdated and
-    inadequate, making it difficult to manage inventory, supply chain, and sales
-    processes. The client required a modern software solution that could
-    integrate all their business functions into a single platform, allowing them
-    to streamline operations, improve customer service, and increase sales.
-  </p>
-  <p>
-    Solution To meet the client's needs, we proposed a custom software solution
-    that would integrate all the required functions into a single platform. The
-    solution would include a modern and user-friendly interface, making it easy
-    for employees and customers to navigate. The solution would also be scalable
-    and adaptable, allowing for future changes and updates.
-  </p>
-  <p>
-    As a front-end full-stack developer, my role was to design and develop the
-    user interface of the software. I worked closely with the back-end
-    developers and project managers to ensure that the software met the client's
-    requirements and specifications. I used modern front-end technologies such
-    as React, Angular, and Vue to develop the user interface and ensure a
-    seamless user experience.
-  </p>
-  <p>
-    To develop the admin panel, I used Bootstrap, Material UI, and Ant Design
-    frameworks. These frameworks helped me to create a responsive and
-    user-friendly admin panel that could be easily customized to meet the
-    client's needs. We also integrated the solution with third-party tools and
-    APIs to ensure seamless integration with the client's existing systems. We
-    used popular e-commerce platforms such as Magento, WooCommerce, and Shopify
-    to develop the B2B and B2C e-commerce functions, providing the client with a
-    robust and flexible e-commerce platform. The solution was tested rigorously
-    to ensure that it met the client's requirements and was free of bugs and
-    glitches. We also provided training and support to the client's employees to
-    ensure that they could use the software effectively and efficiently.
-    Conclusion Our software solution helped the client to streamline their
-    business operations, improve customer service, and increase sales. The
-    all-in-one platform provided the client with a modern and scalable solution
-    that could be easily customized to meet their needs. As a front-end
-    full-stack developer, I was proud to have contributed to the success of the
-    project.
-  </p>
-  <div class="project-details">
-    <h2 class="title">Project List :</h2>
-    <ul class="project-list-section">
+  <!-- SECTION HEADER -->
+  <section class="projects-header">
+    <h1 class="section-title">My Projects</h1>
+    <p class="section-subtitle">
+      Enterprise and SaaS web applications focused on scalability,
+      performance, and user experience.
+    </p>
+  </section>
+
+  <!-- PROJECT STORY -->
+  <section class="project-story">
+    <div class="story-block">
+      <h3>Overview</h3>
+      <p>
+        A leading automobile manufacturer required an all-in-one software
+        platform to manage ERP, CRM, B2B, B2C e-commerce, and administrative
+        operations efficiently.
+      </p>
+    </div>
+
+    <div class="story-block">
+      <h3>Problem</h3>
+      <p>
+        Existing systems were outdated and fragmented, making it difficult to
+        manage inventory, supply chain, sales workflows, and customer
+        relationships across multiple channels.
+      </p>
+    </div>
+
+    <div class="story-block">
+      <h3>Solution</h3>
+      <p>
+        We delivered a scalable, modular web platform with a modern UI,
+        integrating ERP, CRM, admin panels, and B2B/B2C commerce into a
+        single system.
+      </p>
+    </div>
+
+    <div class="story-block highlight">
+      <h3>My Role</h3>
+      <p>
+        Led frontend development, collaborating with backend teams to build
+        responsive, high-performance interfaces using Angular and modern UI
+        frameworks.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECT LIST -->
+  <section class="project-list">
+    <h2 class="section-title small">Project List</h2>
+
+    <ul class="project-grid">
       <li *ngFor="let data of projectData">
-        <div class="router-card-view">
-          <div class="project-card-view-details">
-            <h2 class="project-title">{{ data.title }}</h2>
-            <a
-              class="learn-hover-only"
-              (click)="navigateTo(data.routerLink)"
-              >Learn More</a
-            >
-          </div>
+        <div class="project-card">
+          <h3 class="project-title">{{ data.title }}</h3>
+
+          <button
+            class="project-cta"
+            (click)="navigateTo(data.routerLink)"
+          >
+            View Case Study →
+          </button>
         </div>
       </li>
     </ul>
-  </div>
+  </section>
+
 </div>

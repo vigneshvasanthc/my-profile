@@ -2,7 +2,7 @@ export const topNavData = [
     {
         routeLink : 'about-me',
         icon: 'faUser',
-        label: 'Blog',
+        label: 'About Me',
         flag: 'brand'
     },
     {
@@ -14,6 +14,6 @@ export const topNavData = [
     {
         routeLink : 'contact',
         icon: 'faUser',
-        label: 'Resume'
+        label: 'Resume UI'
     },
 ]

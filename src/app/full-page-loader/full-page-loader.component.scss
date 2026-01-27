@@ -5,15 +5,15 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 100vh;
-
 }
 
 .cssload-container{
   display: block;
   margin:27px auto;
   width:55px;
-  position: relative;
+  position: absolute;
   top: 50%;
+  left: 60%;
 }
 
 .cssload-loading{

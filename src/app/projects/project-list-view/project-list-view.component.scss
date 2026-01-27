@@ -1,68 +1,151 @@
 @import '../../../../src/variables.scss';
 
-.title {
-    font-weight: bold;
-    font-size: 24px;
-    text-decoration: underline;
+/* -------------------------
+   SECTION HEADERS
+-------------------------- */
+
+.projects-header {
+  max-width: 900px;
+  margin: 0 auto 48px;
+  text-align: center;
 }
-.container-block {
-    p {
-        padding: 15px 0;
-    }
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #020617;
 }
-.project-list-section {
-    display: grid;
-    grid-template-columns: auto auto;
-    width: 80%;
-    margin: 0 auto;
-    li {
-        display: inline-block;
-       
-        .project-card-view-details {
-            position: relative;
-            display: grid;
-            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 5px;
-            height: 200px;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background-color: $background-menu;
-            color: $text-color-white;
-           /*  transition: opacity .5s .1s ease-in;
-            opacity: 1; */
-            .project-title {
-                font-weight: bold;
-                font-size: 24px;
-            }
-            &:hover {
-                opacity: 0.9;
-                transition: opacity .3s ease-in;
-                .learn-hover-only {
-                    opacity: 1;
-                    transition: opacity 0.5s 0.1s ease-in;
-                }
-            }
-            .learn-hover-only {
-                position: absolute;
-                bottom: 15px;
-                right: 15px;
-                opacity: 0;
-                max-width: 80%;
-                transition: opacity 0.3s ease-out;
-                border: 1px solid $text-color-white;
-                border-radius: 5px;
-                padding: 10px 15px;
-                font-weight: 600;
-                &:hover {
-                    background-color: $text-color-white;
-                    color: $text-color-black;                    
-                    transition: all 350ms;
-                    cursor: pointer;
-                }
-            }
-        }
-    }
+
+.section-title.small {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.section-subtitle {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #475569;
+}
+
+/* -------------------------
+   STORY SECTION
+-------------------------- */
+
+.project-story {
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 0 25px;
+}
+
+.story-block {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #020617;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #334155;
+  }
+}
+
+.story-block.highlight {
+  border-left: 4px solid #38bdf8;
+  background: #f8fafc;
+}
+
+/* -------------------------
+   PROJECT GRID
+-------------------------- */
+
+.project-list {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 25px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  padding: 0;
+  list-style: none;
+}
+
+/* -------------------------
+   PROJECT CARD
+-------------------------- */
+
+.project-card {
+  position: relative;
+  background: linear-gradient(135deg, #020617, #020617);
+  color: #ffffff;
+  padding: 32px;
+  border-radius: 20px;
+  height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3);
+}
+
+.project-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* -------------------------
+   CTA BUTTON
+-------------------------- */
+
+.project-cta {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-cta:hover {
+  background: #38bdf8;
+  border-color: #38bdf8;
+  color: #020617;
+}
+
+/* -------------------------
+   RESPONSIVE
+-------------------------- */
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 26px;
+  }
+
+  .project-card {
+    height: auto;
+  }
 }

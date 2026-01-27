@@ -46,7 +46,44 @@ body {
 }
 
 .container-block {
-    padding-top: 2rem;
+  position: relative;
+  padding-top: 100px;
+  background: #fcfcfc;
+  margin-left: 5rem;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  overflow: hidden;
+}
+.container-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* HIGHER CONTRAST DOTS */
+  background-image: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.25) 1.5px,
+    transparent 1.5px
+  );
+
+  background-size: 32px 32px;
+  background-position: 0 0;
+
+  animation: dotsMove 60s linear infinite;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes dotsMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 600px 600px;
+  }
 }
 
 // Scrollbar CSS
